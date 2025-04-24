@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Boxicons CSS for icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/CSS/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Login</h1>
+      <p id="err-msg"></p>
+      <form>
+        <div>
+          <i class="bx bxs-envelope"></i>
+          <input
+            type="email"
+            name="email"
+            id="email_input"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div>
+          <i class="bx bxs-lock"></i>
+          <input
+            type="password"
+            name="password"
+            id="password_input"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <p>New Here? <a href="signup.html">Create an Account</a></p>
+    </div>
+    <script src="assets/scripts/validation.js"></script>
+  </body>
+</html>
