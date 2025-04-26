@@ -27,8 +27,8 @@ form.addEventListener("submit", (e) => {
         email: email_input.value,
         password: password_input.value,
       };
-      setTimeout(handleSetUserInfo(userInfo), 400);
-      setTimeout((window.location.href = "welcom.html"), 600);
+      setTimeout(handleSetUserInfo(userInfo), 100);
+      setTimeout((window.location.href = "index.html"), 200);
     }
   } else {
     //if we don't have firstname entered then we are in the login page
@@ -46,7 +46,7 @@ form.addEventListener("submit", (e) => {
       };
 
       setTimeout(handleSetUserLogin(userLogin), 100);
-      setTimeout((window.location.href = "welcom.html"), 200);
+      setTimeout((window.location.href = "index.html"), 200);
     }
   }
 });
