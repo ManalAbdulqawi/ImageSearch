@@ -4,16 +4,7 @@ const email_input = document.getElementById("email_input");
 const password_input = document.getElementById("password_input");
 const repeat_password_input = document.getElementById("repeat_password_input");
 const err_msg = document.getElementById("err-msg");
-let emailExist;
 
-// saved users information data in array of objects to validate if signp email doesn't exist then push the new signup user in the array
-//addtionally we assume this users array as users table in database and compare if the signin data match one of the array's users
-let usersArray = [
-  { firstName: "Manal", email: "manal@gmail.com", password: "87654321" },
-  { firstName: "Majed", email: "Majed@gmail.com", password: "87654321" },
-  { firstName: "Maha", email: "maha@gmail.com", password: "87654321" },
-  { firstName: "Mustafa", email: "mustafa@gmail.com", password: "87654321" },
-];
 form.addEventListener("submit", (e) => {
   let errors = [];
 
@@ -36,18 +27,36 @@ form.addEventListener("submit", (e) => {
         email: email_input.value,
         password: password_input.value,
       };
-
-      setTimeout(handleSetUserInfo(userInfo), 100);
-      setTimeout((window.location.href = "welcom.html"), 200);
+      setTimeout(handleSetUserInfo(userInfo), 400);
+      setTimeout((window.location.href = "welcom.html"), 600);
     }
   } else {
     //if we don't have firstname entered then we are in the login page
-   
+    errors = getLoginFormErrors(email_input.value, password_input.value);
+    if (errors.length > 0) {
+      //if there are any errors
+      e.preventDefault();
+      err_msg.innerText = errors.join(".  ");
+    } else {
+      e.preventDefault();
+      const user = JSON.parse(localStorage.getItem("user_info"));
+
+      userLogin = {
+        firstName: user.firstName,
+      };
+
+      setTimeout(handleSetUserLogin(userLogin), 100);
+      setTimeout((window.location.href = "welcom.html"), 200);
+    }
   }
 });
 function handleSetUserInfo(userInfo) {
-  usersArray.push(userInfo);
   localStorage.setItem("user_info", JSON.stringify(userInfo));
+  const login = { firstName: userInfo.firstName };
+  localStorage.setItem("user_login", JSON.stringify(login));
+}
+function handleSetUserLogin(userLogin) {
+  localStorage.setItem("user_login", JSON.stringify(userLogin));
 }
 
 function getSignupFormErrorrs(firstname, email, password, repeatPassword) {
@@ -61,18 +70,11 @@ function getSignupFormErrorrs(firstname, email, password, repeatPassword) {
     errors.push("Email syntax is not valid");
     email_input.parentElement.classList.add("incorrect");
   }
-  emailExist = usersArray.filter((user) => user.email === email);
-
-  if (emailExist.length > 0) {
-    errors.push("Email already exist");
-    email_input.parentElement.classList.add("incorrect");
-  }
   const user = JSON.parse(localStorage.getItem("user_info"));
   if (user.email === email) {
     errors.push("Email already exist");
     email_input.parentElement.classList.add("incorrect");
   }
-
   if (password.length < 8) {
     errors.push("Password must be 8 characters or longer");
     password_input.parentElement.classList.add("incorrect");
@@ -86,7 +88,35 @@ function getSignupFormErrorrs(firstname, email, password, repeatPassword) {
   return errors;
 }
 
+function getLoginFormErrors(email, password) {
+  let errors = [];
 
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailRegex.test(email)) {
+    errors.push("Email syntax is not valid");
+    email_input.parentElement.classList.add("incorrect");
+  }
+  if (password.length < 8) {
+    errors.push("Password must be 8 characters or longer");
+    password_input.parentElement.classList.add("incorrect");
+  }
+  const user = JSON.parse(localStorage.getItem("user_info"));
+
+  if (user) {
+    if (user.email !== email) {
+      errors.push("Email is not exist");
+      email_input.parentElement.classList.add("incorrect");
+    } else if (user.password !== password) {
+      errors.push("Password is wrong");
+      password_input.parentElement.classList.add("incorrect");
+    }
+  } else {
+    errors.push("Email is not exist");
+    email_input.parentElement.classList.add("incorrect");
+  }
+
+  return errors;
+}
 
 const inputs_list = [
   firstname_input,
