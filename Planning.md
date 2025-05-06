@@ -51,7 +51,7 @@
 
 - **Tasks:** 
     - Create the HTML structure for the index.html (Image Search) page and apply CSS for styling, ensuring responsiveness across various screen sizes.
-    - Implement JavaScript functions to retrieve the image search input data in accordance with the acceptance criteria.
+    - Implement JavaScript functions to retrieve the result of image search input data in accordance with the acceptance criteria.
     - Present the image search results on the index.html page (Image Search page) along with a "Load More" button.
     - Ensure that clicking the "Load More" button on the index.html page fetches additional image search results.
     - Verify if the user is signed in to display the welcome message and remove it when the user signs out.

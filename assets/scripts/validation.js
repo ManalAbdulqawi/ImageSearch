@@ -5,6 +5,16 @@ const password_input = document.getElementById("password_input");
 const repeat_password_input = document.getElementById("repeat_password_input");
 const err_msg = document.getElementById("err-msg");
 
+window.onload = function () {
+  console.log("Window loaded. Setting background image...");
+  document.body.style.backgroundImage = 'url("assets/images/p1.jpg")';
+
+  // Check if the style has been applied
+  console.log(
+    "Background image applied: ",
+    document.body.style.backgroundImage
+  );
+};
 form.addEventListener("submit", (e) => {
   let errors = [];
 

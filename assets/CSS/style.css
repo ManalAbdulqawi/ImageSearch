@@ -17,7 +17,7 @@ html {
 }
 body {
   min-height: 100vh;
-  background-image: url("../images/p1.jpg");
+  background: white;
   background-size: cover;
   background-position: right;
 }
@@ -79,12 +79,11 @@ nav h2 {
 #out {
   display: none;
 }
-#signin {
+#signin #signup {
   display: inline-block;
+  width: 90px;
 }
-#signup {
-  display: inline-block;
-}
+
 #index-heading {
   font-size: x-large;
   margin: 100px 0 60px 0;
@@ -99,15 +98,78 @@ nav h2 {
   border-color: var(--main-color);
 }
 form #image-input:focus {
-    border-color: var(--text-color);
-  }
-#search-button{
-    margin-bottom: 10px;
-    text-transform: none;
+  border-color: var(--text-color);
+}
+#search-button {
+  margin-bottom: 10px;
+  text-transform: none;
 }
 
 button:hover {
   background-color: #fc9300;
+  color: var(--text-color);
+}
+
+.search-results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 10px;
+}
+.img-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.result-image {
+  min-height: 200px;
+  max-width: 450px;
+  border: 2px solid rgba(239, 137, 4, 0.12);
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  gap: 5px;
+}
+.result-image img {
+    margin-top: 0;
+  width: 100%;
+  height:260px;
+  object-fit: cover;
+  transition: opcity 0.2s ease-in-out;
+}
+.result-image:hover img {
+  opacity: 0.7;
+}
+.result-image a {
+  text-decoration: none;
+  color: #1f0a01b3;
+  display: block;
+  padding: 5px;
+  text-transform: capitalize;
+}
+.result-image a:hover {
+    text-decoration: underline;
+    color: #631f01b3;
+ 
+  }
+#load-more-button {
+  background-color: var(--text-color);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: block;
+  margin: 30px auto;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  display: none;
+}
+#load-more-button:hover {
+  background-color: var(--main-color);
   color: var(--text-color);
 }
 
@@ -251,11 +313,15 @@ form div.incorrect input {
 #err-msg {
   color: #f90d29;
 }
-
+@media (max-width: 768px) {
+  .search-results .img-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 450px) {
   nav ul {
     padding: 10px 5px;
-    margin-top: -25px;
+    margin-top: 5px;
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Align items to the left */
   }
@@ -269,5 +335,8 @@ form div.incorrect input {
 
   .button-container button {
     margin-bottom: 10px; /* Add margin below buttons */
+  }
+  .search-results .img-wrapper {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
