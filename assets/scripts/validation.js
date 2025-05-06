@@ -30,8 +30,8 @@ form.addEventListener("submit", (e) => {
         email: email_input.value,
         password: password_input.value,
       };
-      handleSetUserInfo(userInfo);
-      setTimeout((window.location.href = "index.html"), 200);
+      setTimeout(handleSetUserInfo(userInfo), 400);
+      setTimeout((window.location.href = "index.html"), 600);
     }
   } else {
     //if we don't have firstname entered then we are in the login page
@@ -48,8 +48,8 @@ form.addEventListener("submit", (e) => {
         firstName: user.firstName,
       };
 
-      handleSetUserLogin(userLogin);
-      setTimeout((window.location.href = "index.html"), 200);
+      setTimeout(handleSetUserLogin(userLogin), 400);
+      setTimeout((window.location.href = "index.html"), 600);
     }
   }
 });
@@ -57,6 +57,7 @@ function handleSetUserInfo(userInfo) {
   localStorage.setItem("user_info", JSON.stringify(userInfo));
   const login = { firstName: userInfo.firstName };
   localStorage.setItem("user_login", JSON.stringify(login));
+  console.log("localstorage entered");
 }
 function handleSetUserLogin(userLogin) {
   localStorage.setItem("user_login", JSON.stringify(userLogin));
@@ -74,7 +75,7 @@ function getSignupFormErrorrs(firstname, email, password, repeatPassword) {
     email_input.parentElement.classList.add("incorrect");
   }
   const user = JSON.parse(localStorage.getItem("user_info"));
-  if (user.email === email) {
+  if (user && user.email === email) {
     errors.push("Email already exist");
     email_input.parentElement.classList.add("incorrect");
   }
