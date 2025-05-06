@@ -30,7 +30,7 @@ form.addEventListener("submit", (e) => {
         email: email_input.value,
         password: password_input.value,
       };
-      setTimeout(handleSetUserInfo(userInfo), 100);
+      handleSetUserInfo(userInfo);
       setTimeout((window.location.href = "https://imagesearchengn.netlify.app/"), 200);
     }
   } else {
@@ -48,7 +48,7 @@ form.addEventListener("submit", (e) => {
         firstName: user.firstName,
       };
 
-      setTimeout(handleSetUserLogin(userLogin), 100);
+      handleSetUserLogin(userLogin);
       setTimeout((window.location.href = "https://imagesearchengn.netlify.app/"), 200);
     }
   }
