@@ -31,7 +31,7 @@ form.addEventListener("submit", (e) => {
         password: password_input.value,
       };
       handleSetUserInfo(userInfo);
-      setTimeout((window.location.href = "https://imagesearchengn.netlify.app/"), 200);
+      setTimeout((window.location.href = "index.html"), 200);
     }
   } else {
     //if we don't have firstname entered then we are in the login page
@@ -49,7 +49,7 @@ form.addEventListener("submit", (e) => {
       };
 
       handleSetUserLogin(userLogin);
-      setTimeout((window.location.href = "https://imagesearchengn.netlify.app/"), 200);
+      setTimeout((window.location.href = "index.html"), 200);
     }
   }
 });
