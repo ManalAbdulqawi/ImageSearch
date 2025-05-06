@@ -41,10 +41,7 @@ async function searchImages() {
     else{
         document.getElementById("err-msg").innerText="Invalid Input"
         imgWrapper.innerHTML = "";
-        loadButton.style.display = "none";
-
-
-    }
+        loadButton.style.display = "none"; }
 }
 form.addEventListener("submit", (e) => {
 

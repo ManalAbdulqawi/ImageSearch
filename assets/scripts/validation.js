@@ -6,14 +6,7 @@ const repeat_password_input = document.getElementById("repeat_password_input");
 const err_msg = document.getElementById("err-msg");
 
 window.onload = function () {
-  console.log("Window loaded. Setting background image...");
   document.body.style.backgroundImage = 'url("assets/images/p1.jpg")';
-
-  // Check if the style has been applied
-  console.log(
-    "Background image applied: ",
-    document.body.style.backgroundImage
-  );
 };
 form.addEventListener("submit", (e) => {
   let errors = [];
@@ -38,7 +31,7 @@ form.addEventListener("submit", (e) => {
         password: password_input.value,
       };
       setTimeout(handleSetUserInfo(userInfo), 100);
-      setTimeout((window.location.href = "index.html"), 200);
+      setTimeout((window.location.href = "https://imagesearchengn.netlify.app"), 200);
     }
   } else {
     //if we don't have firstname entered then we are in the login page
@@ -56,7 +49,7 @@ form.addEventListener("submit", (e) => {
       };
 
       setTimeout(handleSetUserLogin(userLogin), 100);
-      setTimeout((window.location.href = "index.html"), 200);
+      setTimeout((window.location.href = "https://imagesearchengn.netlify.app"), 200);
     }
   }
 });
