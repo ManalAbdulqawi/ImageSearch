@@ -312,6 +312,7 @@ form div.incorrect input {
 }
 #err-msg {
   color: #f90d29;
+  margin-left: 0.8rem;
 }
 @media (max-width: 768px) {
   .search-results .img-wrapper {
