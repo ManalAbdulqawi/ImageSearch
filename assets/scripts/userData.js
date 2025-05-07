@@ -7,6 +7,17 @@ const loadButton = document.getElementById("load-more-button");
 
 let keyWord = "";
 let page = 1;
+let unAcceptedWord = [
+  "sex",
+  "kill",
+  "porn",
+  "abuse",
+  "suicide",
+  "terrorism",
+  "crime",
+  "died",
+  "violence",
+];
 
 async function searchImages() {
   keyWord = inputImage.value;
@@ -50,12 +61,29 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if (inputImage.value.trim().length <= 0) {
-    document.getElementById("err-msg").innerText = "Invalid Input";
-    imgWrapper.innerHTML = "";
-    loadButton.style.display = "none";
+    noSearchResult();
   } else {
-    page = 1;
-    searchImages();
+    // Get the trimmed and lowercased input value
+    const inputValue = inputImage.value.trim().toLowerCase();
+
+    // Variable to store the found unaccepted word (optional, but useful for feedback)
+    let foundUnacceptedWord = null;
+
+    // Iterate through the unAcceptedWord array
+    for (const word of unAcceptedWord) {
+      // Check if the input value contains the current unaccepted word
+      if (inputValue.includes(word)) {
+        foundUnacceptedWord = word;
+        break; // Stop searching once a match is found
+      }
+    }
+
+    if (foundUnacceptedWord) {
+      noSearchResult();
+    } else {
+      page = 1;
+      searchImages();
+    }
   }
 });
 
