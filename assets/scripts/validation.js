@@ -4,6 +4,7 @@ const email_input = document.getElementById("email_input");
 const password_input = document.getElementById("password_input");
 const repeat_password_input = document.getElementById("repeat_password_input");
 const err_msg = document.getElementById("err-msg");
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 window.onload = function () {
   document.body.style.backgroundImage = 'url("assets/images/p1.jpg")';
@@ -53,19 +54,32 @@ form.addEventListener("submit", (e) => {
     }
   }
 });
+/**
+ * This method save the user sign up data in localstorage with two keys 1- user_info to compare it with new signup data 2- user_login to display welcome message in index.html page
+ * @param {object} userInfo
+ */
 function handleSetUserInfo(userInfo) {
   localStorage.setItem("user_info", JSON.stringify(userInfo));
   const login = { firstName: userInfo.firstName };
   localStorage.setItem("user_login", JSON.stringify(login));
-  console.log("localstorage entered");
 }
+/**
+ * This method save user_login key in localstorage when the user signin to display welcome message in index.html page
+ * @param {object} userLogin
+ */
 function handleSetUserLogin(userLogin) {
   localStorage.setItem("user_login", JSON.stringify(userLogin));
 }
-
+/**
+ * This method to check if the entered data in signup.html are valid
+ * @param {string} firstname
+ * @param {string} email
+ * @param {string} password
+ * @param {string} repeatPassword
+ * @returns {Array}  array of error strings
+ */
 function getSignupFormErrorrs(firstname, email, password, repeatPassword) {
   let errors = [];
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (firstname.trim().length <= 1 || firstname.length < 2) {
     errors.push("Firstname has to be more than 2 letters");
     firstname_input.parentElement.classList.add("incorrect");
@@ -92,10 +106,16 @@ function getSignupFormErrorrs(firstname, email, password, repeatPassword) {
   return errors;
 }
 
+/**
+ * This method to check if the entered data in signin.html are valid
+ * @param {string} firstname
+ * @param {string} email
+ * @returns {Array}  array of error strings
+ */
+
 function getLoginFormErrors(email, password) {
   let errors = [];
 
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (!emailRegex.test(email)) {
     errors.push("Email syntax is not valid");
     email_input.parentElement.classList.add("incorrect");
@@ -121,7 +141,7 @@ function getLoginFormErrors(email, password) {
 
   return errors;
 }
-
+// this code delete the error message when the user keying in input textbox
 const inputs_list = [
   firstname_input,
   email_input,
@@ -136,5 +156,3 @@ inputs_list.forEach((input) => {
     }
   });
 });
-
-//module.exports= { user_data };

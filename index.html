@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <meta
-    name="description"
-    content="This is a Image Search page">                                          
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is a Image Search page" />
     <title>ImageSearch</title>
-    <link rel="stylesheet" href="assets/CSS/style.css" >
-    <link rel="icon" href="assets/images/imageIcon.png" type="image/x-icon"> 
+    <link rel="stylesheet" href="assets/CSS/style.css" />
+    <link rel="icon" href="assets/images/imageIcon.png" type="image/x-icon" />
   </head>
   <body>
     <nav>
-      <ul><li><h2>ImageSearch</h2></li>
+      <ul>
+        <li><h2>ImageSearch</h2></li>
         <li class="welcome-message" id="welcom"></li>
         <li class="button-container">
           <button onclick="redirectToOut()" id="out">Sign Out</button>
@@ -21,35 +20,59 @@
         </li>
       </ul>
     </nav>
-     
     <h1 id="index-heading">Image Search App</h1>
-    <form  action="#">
+    <form action="#">
       <p id="err-msg"></p>
       <div class="button-container">
-     <input id="image-input" type="text"  placeholder="Search for Images" required>
-     <button id="search-button">Search</button>
+        <input
+          id="image-input"
+          type="text"
+          placeholder="Search for Images"
+          required
+        />
+        <button id="search-button">Search</button>
       </div>
     </form>
-     
 
     <div class="search-results">
       <div class="img-wrapper">
-      <div class="result-image">
-        <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="beach">
-        <a href="https://unsplash.com/photos/body-of-water-near-trees-and-mountain-cliff-during-daytime-TWoL-QCZubY" target="_blank">Beach, trees and mountain cliff during daytime</a>
+        <div class="result-image">
+          <img
+            src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="beach"
+          />
+          <a
+            href="https://unsplash.com/photos/body-of-water-near-trees-and-mountain-cliff-during-daytime-TWoL-QCZubY"
+            target="_blank"
+            >Beach, trees and mountain cliff during daytime</a
+          >
+        </div>
+        <div class="result-image">
+          <img
+            src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=2630&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="cat"
+          />
+          <a
+            href="https://unsplash.com/photos/selective-focus-photography-of-orange-and-white-cat-on-brown-table-75715CVEJhI"
+            target="_blank"
+            >Cute cat looking up</a
+          >
+        </div>
+        <div class="result-image">
+          <img
+            src="https://images.unsplash.com/photo-1611024847487-e26177381a3f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="family"
+          />
+          <a
+            href="https://unsplash.com/photos/2-women-and-man-standing-on-green-grass-field-during-daytime-OMl0o6TSQXU"
+            target="_blank"
+            >Happy family</a
+          >
+        </div>
       </div>
-      <div class="result-image">
-        <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=2630&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="cat">
-        <a href="https://unsplash.com/photos/selective-focus-photography-of-orange-and-white-cat-on-brown-table-75715CVEJhI" target="_blank">Cute cat looking up</a>
-      </div>
-      <div class="result-image">
-        <img src="https://images.unsplash.com/photo-1611024847487-e26177381a3f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="family">
-        <a href="https://unsplash.com/photos/2-women-and-man-standing-on-green-grass-field-during-daytime-OMl0o6TSQXU" target="_blank">Happy family</a>
-      </div>
-    </div>
     </div>
     <button id="load-more-button">Load More</button>
-    <div><br><br><br></div>
-    <script src="assets/scripts/userData.js"></script>
+    <div><br /><br /><br /></div>
+    <script src="assets/scripts/userdata.js"></script>
   </body>
 </html>

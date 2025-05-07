@@ -19,6 +19,10 @@ let unAcceptedWord = [
   "violence",
 ];
 
+/**
+* This method fetch the images according the user input from unsplash api 
+*/
+  // Some parts of this function code I have learned it from the youtube video in readme file
 async function searchImages() {
   keyWord = inputImage.value;
   const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
@@ -95,9 +99,13 @@ loadButton.addEventListener("click", () => {
 });
 
 window.onload = function () {
-  def();
+  loadIntial();
 };
-function def() {
+
+/**
+* This function show the welcome message and signout button if the user signin or signup
+*/
+function loadIntial() {
   const user = JSON.parse(localStorage.getItem("user_login"));
   if (user) {
     document.getElementById("welcom").innerText = "Welcome " + user.firstName;
@@ -107,18 +115,28 @@ function def() {
   }
 }
 
+/**
+* This method redirects the person to the signin page
+*/
 function redirectToSignIn() {
-  window.location.href = "signin.html"; // Change to your desired page
+  window.location.href = "signin.html";
 }
-
+/**
+* This method redirects the person to the signup page
+*/
 function redirectToSignUp() {
-  window.location.href = "signup.html"; // Change to your desired page
+  window.location.href = "signup.html"; 
 }
+/**
+* This method remove the localstorage of "user_login" key and redirect the user to index page
+*/
 function redirectToOut() {
   localStorage.removeItem("user_login");
-  window.location.href = "index.html"; // Change to your desired page
+  window.location.href = "index.html"; 
 }
-
+/**
+* This method show error message when the user enter unaccepted or invalid input
+*/
 function noSearchResult() {
   document.getElementById("err-msg").innerText = "Invalid Input";
   imgWrapper.innerHTML = "";
