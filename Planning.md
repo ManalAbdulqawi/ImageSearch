@@ -14,7 +14,9 @@
     - Create the signup page's HTML structure and style it using CSS. Ensure responsiveness for various screen sizes.
     - Implement JavaScript functions to validate the signup form data according to the acceptance criteria (email format, password length, matching passwords).
     - Check if the submitted email already exists in the localStorage of the browser.
-    - Use appropriate data structures (objects) to store user data within localStorage of the browser..
+    - Use appropriate data structures (objects) to store user data within localStorage of the browser.
+
+    ![Screenshot of the signup page](assets/images/signup.png)
 
 
 ## User Story 2
@@ -31,7 +33,10 @@
     - Create the login page's HTML structure and style it using CSS. Ensure responsiveness for various screen sizes.
     - Implement JavaScript functions to validate the login form data according to the acceptance criteria (email format, password length , matching passwords).
     - Check if the submitted email does not exist in the localStorage of the browser.
-    - Use appropriate data structures (objects) to store user data within localStorage of the browser..
+    - Use appropriate data structures (objects) to store user data within localStorage of the browser.
+
+        ![Screenshot of the signup page](assets/images/signin.png)
+
 
 ## User Story 3
 - **Feature Title:** Image Search Page
@@ -48,6 +53,7 @@
     - The entered search data should be submitted to the image API via an HTTP POST request to retrieve results.
     - The search results must be displayed on the Image Search page.
     - A "Load More" button should be available at the bottom of the Image Search page to fetch additional results.
+    - Prevent users from searching for disallowed words like "kill" and etc.
 
 - **Tasks:** 
     - Create the HTML structure for the index.html (Image Search) page and apply CSS for styling, ensuring responsiveness across various screen sizes.
@@ -55,6 +61,11 @@
     - Present the image search results on the index.html page (Image Search page) along with a "Load More" button.
     - Ensure that clicking the "Load More" button on the index.html page fetches additional image search results.
     - Verify if the user is signed in to display the welcome message and remove it when the user signs out.
+    - Verify whether users are searching for disallowed words such as "kill" and others; if so, display "Invalid input."
+
+
+        ![Screenshot of the signup page](assets/images/imageSearch.png)
+
 
 
 

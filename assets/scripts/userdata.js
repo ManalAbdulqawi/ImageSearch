@@ -17,6 +17,8 @@ let unAcceptedWord = [
   "crime",
   "died",
   "violence",
+  "death",
+  "rape",
 ];
 
 /**
