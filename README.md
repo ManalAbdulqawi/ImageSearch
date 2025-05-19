@@ -286,6 +286,11 @@ I tested various input scenarios on the ImageSearch page image search box to ens
     </tr>
   </thead>
   <tbody>
+   <tr>
+      <td>Search for Images</td>
+      <td>  (spaces or no text)</td>
+      <td>Invalid Input </td>
+    </tr>
     <tr>
       <td>Search for Images</td>
       <td>death</td>
