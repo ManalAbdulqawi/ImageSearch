@@ -22,14 +22,19 @@ let unAcceptedWord = [
 ];
 
 /**
-* This method fetch the images according the user input from unsplash api 
-*/
-  // Some parts of this function code I have learned it from the youtube video in readme file
+ * This method fetch the images according the user input from unsplash api
+ */
+// Some parts of this function code I have learned it from the youtube video in readme file
 async function searchImages() {
   keyWord = inputImage.value;
   const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
   try {
     const response = await fetch(url);
+    if (!response.ok) {
+      console.error("Error response:", response.status, response.statusText);
+      noSearchResult();
+      return;
+    }
     const data = await response.json();
     const results = data.results;
     if (results) {
@@ -105,8 +110,8 @@ window.onload = function () {
 };
 
 /**
-* This function show the welcome message and signout button if the user signin or signup
-*/
+ * This function show the welcome message and signout button if the user signin or signup
+ */
 function loadIntial() {
   const user = JSON.parse(localStorage.getItem("user_login"));
   if (user) {
@@ -118,27 +123,27 @@ function loadIntial() {
 }
 
 /**
-* This method redirects the person to the signin page
-*/
+ * This method redirects the person to the signin page
+ */
 function redirectToSignIn() {
   window.location.href = "signin.html";
 }
 /**
-* This method redirects the person to the signup page
-*/
+ * This method redirects the person to the signup page
+ */
 function redirectToSignUp() {
-  window.location.href = "signup.html"; 
+  window.location.href = "signup.html";
 }
 /**
-* This method remove the localstorage of "user_login" key and redirect the user to index page
-*/
+ * This method remove the localstorage of "user_login" key and redirect the user to index page
+ */
 function redirectToOut() {
   localStorage.removeItem("user_login");
-  window.location.href = "index.html"; 
+  window.location.href = "index.html";
 }
 /**
-* This method show error message when the user enter unaccepted or invalid input
-*/
+ * This method show error message when the user enter unaccepted or invalid input
+ */
 function noSearchResult() {
   document.getElementById("err-msg").innerText = "Invalid Input";
   imgWrapper.innerHTML = "";
