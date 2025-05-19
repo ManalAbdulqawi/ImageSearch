@@ -326,9 +326,10 @@ When a user enters valid search keywords, the system retrieves relevant images f
 
 ![Screenshot of invalid](/assets/images/invalid.png)
 
-- The Bug after handling it by adding if and else statements in userdata.js
-  
+- The Bug after handling it by adding if **`if(response.ok)`**, if (results && **`results.length > 0`**) and **else {console.error("Error response:", response.status, response.statusText);**
+  **noSearchResult();}** else statements in userdata.js
 
+  
 
           async function searchImages() {
           keyWord = inputImage.value;
