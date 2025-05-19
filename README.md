@@ -235,6 +235,8 @@ I tested various input scenarios on the Signup page to ensure that invalid data 
 
 When a user successfully signs up with valid data, they will be redirected to the ImageSearch page, where a personalized welcome message will be displayed at the top of the page.
 
+![Screenshot of signup validation](/assets/images/signupRight.png)
+
 ![Screenshot of signup validation](/assets/images/validSignup.png)
 
 ### Login Page Validation
@@ -266,6 +268,8 @@ I tested various input scenarios on the Login page to ensure that invalid data i
 ![Screenshot of signin validation](/assets/images/signinValid.png)
 
 When a user successfully log in with valid data, they will be redirected to the ImageSearch page, where a personalized welcome message will be displayed at the top of the page.
+
+![Screenshot of signin validation](/assets/images/loginRight.png)
 
 ![Screenshot of signin validation](/assets/images/validSignup.png)
 
@@ -396,7 +400,7 @@ Fix any bugs and errors that were missed in the earlier testing phase. Additiona
 - The icons in Signup and Login pages from [Boxicons](https://boxicons.com/).
 - The images in ImageSearch from [Unsplash](https://unsplash.com/).
 - The tab icon is sourced from [favicon.io](https://favicon.io/)
-- The Email regex from [tecadmin] (https://tecadmin.net/validate-email-address-in-javascript/)
+- The Email regex from [tecadmin](https://tecadmin.net/validate-email-address-in-javascript/)
 - The project inspired from this [YouTube tutorial](https://www.youtube.com/watch?v=E4znbZgUWzA).
 
 ## Author
