@@ -327,19 +327,21 @@ When a user enters valid search keywords, the system retrieves relevant images f
 ![Screenshot of invalid](/assets/images/invalid.png)
 
 - The Bug after handling it by adding if and else statements in userdata.js
+  
 
-  async function searchImages() {
-  keyWord = inputImage.value;
-  const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
-  try {
-  const response = await fetch(url);
-  **`if (response.ok)`** {
-  const data = await response.json();
-  const results = data.results;
-  if (results && **`results.length > 0`**) {
-  if (page === 1) {
-  imgWrapper.innerHTML = "";
-  }
+
+          async function searchImages() {
+          keyWord = inputImage.value;
+          const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
+          try {
+          const response = await fetch(url);
+          **`if(response.ok)`** {
+             const data = await response.json();
+             const results = data.results;
+             if (results && **`results.length > 0`**) {
+             if (page === 1) {
+              imgWrapper.innerHTML = "";
+            }
 
           results.map((result) => {
             const imgDiv = document.createElement("div");
@@ -363,8 +365,8 @@ When a user enters valid search keywords, the system retrieves relevant images f
         } else {
           noSearchResult();
         }
-      } **`else {console.error("Error response:", response.status, response.statusText);`**
-        **`noSearchResult();}`**
+      } **else {console.error("Error response:", response.status, response.statusText);**
+        **noSearchResult();}**
 
   } catch (err) {
   noSearchResult();
