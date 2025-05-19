@@ -105,5 +105,56 @@ The purpose of this website is to provide users with a user-friendly and secure 
 - **Browser LocalSrorage**: Used to store registered user data during sign-up and to authenticate users during login by matching entered credentials with existing data stored in localStorage.
 - **Unsplash API**: Fetches images based on the keywords entered by the user, providing relevant search results.
 
+## Setup and Installation
+
+## Testing
+
+- Accessibility
+
+  - I ran the pages through Lighthouse and confirmed that the colors and fonts are easy to read and that the site is accessible.
+
+  ![Screenshot of the imageSearch page Lighthouse](assets/images/imageSearchLH.png)
+
+  ![Screenshot of the imageSearch page Lighthouse](assets/images/loginLH.png)
+
+  ![Screenshot of the imageSearch page Lighthouse](assets/images/signuphLH.png)
+
+  <table>
+  <thead>
+    <tr>
+      <th>Tested Item</th>
+      <th>Max-Width 320px Result (Small Mobile)</th>
+      <th>Min-Width 425px Result (Large Mobile)</th>
+      <th>Min-Width 768px Result (Tablet)</th>
+      <th>Min-Width 992px and Larger Result (Desktop)</th>
+   </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Buttons, images and Links</td>
+      <td>All website's buttons, images and links are placed as intended (Tested).</td>
+      <td>All website's buttons, images and links are placed as intended (Tested).</td>
+      <td>All website's buttons, images and links are placed as intended (Tested).</td>
+      <td>All website's buttons, images and links are placed as intended (Tested).</td>
+    </tr>
+  </tbody>
+</table>
+
+- HTML - No errors found when running the code through the [W3C HTML Validator](https://validator.w3.org/)
+  ![Screenshot of the HTML Validator result](/assets/images/imageSearchHTML.png)
+  ![Screenshot of the HTML Validator result](/assets/images/loginHTML.png)
+  ![Screenshot of the HTML Validator result](/assets/images/signupHTML.png)
+
+
+- CSS - No errors found when running the code through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+  ![Screenshot of the CSS validator result](/assets/images/CSStest.png)
+
+- JavaScript - No errors found when running the code through the [jshint](https://jshint.com/)
+  ![Screenshot of the jshint validator result](/assets/images/jshint1.png)
+  ![Screenshot of the jshint validator result](/assets/images/jshint2.png)
+
+
+
+
 
 
