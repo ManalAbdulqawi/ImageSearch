@@ -1,6 +1,4 @@
-
 ## Image Search Website with Sign up and Login Form
-
 
 ## Overview
 
@@ -12,8 +10,6 @@ The ImageSearch website is a dynamic platform that allows users to search for im
 
 ![Screenshot of the websites homepage on different devices](assets/images/responsiveSignup.png)
 
-
-
 ## Purpose
 
 The purpose of this website is to provide users with a user-friendly and secure platform for searching images. It offers a personalized experience by enabling users to sign up and log in. Additionally, the website incorporates safeguards to prevent users from searching for inappropriate or sensitive words, such as violence and similar terms. Therefore, the ImageSearch platform is a safe and reliable environment suitable for both young and adult users to explore images securely.
@@ -21,73 +17,76 @@ The purpose of this website is to provide users with a user-friendly and secure 
 # ImageSearch User Stories
 
 ## User Story 1
+
 - **Feature Title:** Signup Page
 - **User Story:** As a user, I want to sign up, so that I can have a personalized experience on the website.
-- **Acceptance Criteria:** 
-    - The signup page displays the necessary form fields (name, email, password, and repeat password).
-    - Each input field has client-side validation. (Example: Email format, password strength, matching passwords.)
-    - The collected signup data is saved in a localStorage of the browser.
-    - Error Handling: The page clearly displays appropriate error messages to the user if there's an issue with the form submission. (e.g., email already exists, invalid email format, password mismatch).
-    - The signup page is responsive, displaying correctly on various device sizes.
+- **Acceptance Criteria:**
 
-- **Tasks:** 
-    - Create the signup page's HTML structure and style it using CSS. Ensure responsiveness for various screen sizes.
-    - Implement JavaScript functions to validate the signup form data according to the acceptance criteria (email format, password length, matching passwords).
-    - Check if the submitted email already exists in the localStorage of the browser.
-    - Use appropriate data structures (objects) to store user data within localStorage of the browser.
+  - The signup page displays the necessary form fields (name, email, password, and repeat password).
+  - Each input field has client-side validation. (Example: Email format, password strength, matching passwords.)
+  - The collected signup data is saved in a localStorage of the browser.
+  - Error Handling: The page clearly displays appropriate error messages to the user if there's an issue with the form submission. (e.g., email already exists, invalid email format, password mismatch).
+  - The signup page is responsive, displaying correctly on various device sizes.
 
-    ![Screenshot of the signup page](assets/images/signup.png)
+- **Tasks:**
 
+  - Create the signup page's HTML structure and style it using CSS. Ensure responsiveness for various screen sizes.
+  - Implement JavaScript functions to validate the signup form data according to the acceptance criteria (email format, password length, matching passwords).
+  - Check if the submitted email already exists in the localStorage of the browser.
+  - Use appropriate data structures (objects) to store user data within localStorage of the browser.
+
+  ![Screenshot of the signup page](assets/images/signup.png)
 
 ## User Story 2
+
 - **Feature Title:** Login Page
 - **User Story:** As a user, I want to login, so that I can have a personalized experience on the website.
-- **Acceptance Criteria:** 
-    - The login page displays the necessary form fields ( email, password).
-    - Each input field has client-side validation. (Example: Email format, password strength, matching password and email with existing users.)
-    - The collected signup data is saved in a local localStorage of the browser.
-    - Error Handling: The page clearly displays appropriate error messages to the user if there's an issue with the form submission. (e.g., email does not exists, invalid email format, password mismatch).
-    - The login page is responsive, displaying correctly on various device sizes.
+- **Acceptance Criteria:**
 
-- **Tasks:** 
-    - Create the login page's HTML structure and style it using CSS. Ensure responsiveness for various screen sizes.
-    - Implement JavaScript functions to validate the login form data according to the acceptance criteria (email format, password length , matching passwords).
-    - Check if the submitted email does not exist in the localStorage of the browser.
-    - Use appropriate data structures (objects) to store user data within localStorage of the browser.
+  - The login page displays the necessary form fields ( email, password).
+  - Each input field has client-side validation. (Example: Email format, password strength, matching password and email with existing users.)
+  - The collected signup data is saved in a local localStorage of the browser.
+  - Error Handling: The page clearly displays appropriate error messages to the user if there's an issue with the form submission. (e.g., email does not exists, invalid email format, password mismatch).
+  - The login page is responsive, displaying correctly on various device sizes.
 
-        ![Screenshot of the signup page](assets/images/signin.png)
+- **Tasks:**
 
+  - Create the login page's HTML structure and style it using CSS. Ensure responsiveness for various screen sizes.
+  - Implement JavaScript functions to validate the login form data according to the acceptance criteria (email format, password length , matching passwords).
+  - Check if the submitted email does not exist in the localStorage of the browser.
+  - Use appropriate data structures (objects) to store user data within localStorage of the browser.
+
+    ![Screenshot of the signup page](assets/images/signin.png)
 
 ## User Story 3
+
 - **Feature Title:** Image Search Page
 - **User Story:** As a user, I want to search for images by entering an image name into a search input text box so that I can view search results on the same page. Additionally, I would like to enjoy a personalized experience when I sign in and sign out.
-- **Acceptance Criteria:** 
-    - The Image Search page must include the necessary components of a navigation bar, which features:
-       - A logo.
-       - A welcome message displayed when the user is signed in.
-       - A sign-out button when the welcome message is present.
-       - Sign-in and sign-up buttons when the welcome message is not displayed.
-    - The search area of the page should include all essential form components:
-       - A text box for entering image search queries.
-       - A button to initiate the image search.
-    - The entered search data should be submitted to the image API via an HTTP POST request to retrieve results.
-    - The search results must be displayed on the Image Search page.
-    - A "Load More" button should be available at the bottom of the Image Search page to fetch additional results.
-    - Prevent users from searching for disallowed words like "kill" and etc.
+- **Acceptance Criteria:**
 
-- **Tasks:** 
-    - Create the HTML structure for the index.html (Image Search) page and apply CSS for styling, ensuring responsiveness across various screen sizes.
-    - Implement JavaScript functions to retrieve the result of image search input data in accordance with the acceptance criteria.
-    - Present the image search results on the index.html page (Image Search page) along with a "Load More" button.
-    - Ensure that clicking the "Load More" button on the index.html page fetches additional image search results.
-    - Verify if the user is signed in to display the welcome message and remove it when the user signs out.
-    - Verify whether users are searching for disallowed words such as "kill" and others; if so, display "Invalid input."
+  - The Image Search page must include the necessary components of a navigation bar, which features:
+    - A logo.
+    - A welcome message displayed when the user is signed in.
+    - A sign-out button when the welcome message is present.
+    - Sign-in and sign-up buttons when the welcome message is not displayed.
+  - The search area of the page should include all essential form components:
+    - A text box for entering image search queries.
+    - A button to initiate the image search.
+  - The entered search data should be submitted to the image API via an HTTP POST request to retrieve results.
+  - The search results must be displayed on the Image Search page.
+  - A "Load More" button should be available at the bottom of the Image Search page to fetch additional results.
+  - Prevent users from searching for disallowed words like "kill" and etc.
 
+- **Tasks:**
 
-        ![Screenshot of the signup page](assets/images/imageSearch.png)
+  - Create the HTML structure for the index.html (Image Search) page and apply CSS for styling, ensuring responsiveness across various screen sizes.
+  - Implement JavaScript functions to retrieve the result of image search input data in accordance with the acceptance criteria.
+  - Present the image search results on the index.html page (Image Search page) along with a "Load More" button.
+  - Ensure that clicking the "Load More" button on the index.html page fetches additional image search results.
+  - Verify if the user is signed in to display the welcome message and remove it when the user signs out.
+  - Verify whether users are searching for disallowed words such as "kill" and others; if so, display "Invalid input."
 
-
-
+    ![Screenshot of the signup page](assets/images/imageSearch.png)
 
 ## Features
 
@@ -117,26 +116,52 @@ The purpose of this website is to provide users with a user-friendly and secure 
 
   ![Screenshot of the imageSearch page Lighthouse](assets/images/loginLH.png)
 
-  ![Screenshot of the imageSearch page Lighthouse](assets/images/signuphLH.png)
+  ![Screenshot of the imageSearch page Lighthouse](assets/images/signupLH.png)
 
-  <table>
+## Responsive Testing
+    <table>
+    <thead>
+      <tr>
+        <th>Tested Item</th>
+        <th>Max-Width 320px Result (Small Mobile)</th>
+        <th>Min-Width 425px Result (Large Mobile)</th>
+        <th>Min-Width 768px Result (Tablet)</th>
+        <th>Min-Width 992px and Larger Result (Desktop)</th>
+     </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Buttons, images and Links</td>
+        <td>All website's buttons, images and links are placed as intended (Tested).</td>
+        <td>All website's buttons, images and links are placed as intended (Tested).</td>
+        <td>All website's buttons, images and links are placed as intended (Tested).</td>
+        <td>All website's buttons, images and links are placed as intended (Tested).</td>
+      </tr>
+    </tbody>
+   </table>
+   
+## Browser Testing
+I tested a range of web browswers. See an example of tests below.
+<table>
   <thead>
     <tr>
-      <th>Tested Item</th>
-      <th>Max-Width 320px Result (Small Mobile)</th>
-      <th>Min-Width 425px Result (Large Mobile)</th>
-      <th>Min-Width 768px Result (Tablet)</th>
-      <th>Min-Width 992px and Larger Result (Desktop)</th>
-   </tr>
+      <th>Browser</th>
+      <th>Appearance</th>
+      <th>Responsiveness</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Buttons, images and Links</td>
-      <td>All website's buttons, images and links are placed as intended (Tested).</td>
-      <td>All website's buttons, images and links are placed as intended (Tested).</td>
-      <td>All website's buttons, images and links are placed as intended (Tested).</td>
-      <td>All website's buttons, images and links are placed as intended (Tested).</td>
+      <td>Chrome</td>
+      <td>All the page's secttions format correctly. All buttons work well.</td>
+      <td>Responsive design / Very good</td>
     </tr>
+    <tr>
+      <td>Edge</td>
+      <td>All the page's secttions format correctly. All buttons work well.</td>
+      <td>Responsive design / Very good</td>
+    </tr>
+ 
   </tbody>
 </table>
 
@@ -145,15 +170,120 @@ The purpose of this website is to provide users with a user-friendly and secure 
   ![Screenshot of the HTML Validator result](/assets/images/loginHTML.png)
   ![Screenshot of the HTML Validator result](/assets/images/signupHTML.png)
 
-
 - CSS - No errors found when running the code through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-  ![Screenshot of the CSS validator result](/assets/images/CSStest.png)
+  ![Screenshot of the CSS validator result](/assets/images/testCSS.png)
 
 - JavaScript - No errors found when running the code through the [jshint](https://jshint.com/)
   ![Screenshot of the jshint validator result](/assets/images/jshint1.png)
   ![Screenshot of the jshint validator result](/assets/images/jshint2.png)
 
 
+  ## Validation Testing
+### Signup Page Validation
+I tested various input scenarios on the Signup page to ensure that invalid data is correctly rejected and valid data is accepted and stored in localStorage. Below are some examples of the test cases conducted.
+<table>
+  <thead>
+    <tr>
+      <th>Input TextBox Name</th>
+      <th>Data Entered</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>First Name</td>
+      <td>a</td>
+      <td>Firstname has to be more than 2 letters</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>hello@gmail</td>
+      <td>Email syntax is not valid</td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>1234</td>
+      <td>Password must be 8 characters or longer</td>
+    </tr>
+     <tr>
+      <td>Repeated Password</td>
+      <td>123</td>
+      <td>Repeat Password isn't matching Password or isn't 8 characters or longer</td>
+    </tr>
+  </tbody>
+</table>
+
+  ![Screenshot of signup validation](/assets/images/signupValid.png)
+
+ When a user successfully signs up with valid data, they will be redirected to the ImageSearch page, where a personalized welcome message will be displayed at the top of the page.
+
+   ![Screenshot of signup validation](/assets/images/validSignup.png)
+
+### Login Page Validation
+I tested various input scenarios on the Login page to ensure that invalid data is correctly rejected and valid data is accepted and match the user data which stored in localStorage. Below are some examples of the test cases conducted.
+<table>
+  <thead>
+    <tr>
+      <th>Input TextBox Name</th>
+      <th>Data Entered</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Email</td>
+      <td>hello@gmail</td>
+      <td>Email syntax is not valid. Email is not exist</td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>1234</td>
+      <td>Password must be 8 characters or longer. Password is wrong</td>
+    </tr>
+  </tbody>
+</table>
+
+  ![Screenshot of signup validation](/assets/images/signinValid.png)
+
+   When a user successfully log in with valid data, they will be redirected to the ImageSearch page, where a personalized welcome message will be displayed at the top of the page.
+
+ ![Screenshot of signup validation](/assets/images/validSignup.png)
+
+
+ ### ImageSearch Page Validation
+I tested various input scenarios on the ImageSearch page image search box to ensure that invalid data is correctly rejected and valid data is accepted. Below are some examples of the test cases conducted.
+<table>
+  <thead>
+    <tr>
+      <th>Input TextBox Name</th>
+      <th>Data Entered</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Search for Images</td>
+      <td>death</td>
+      <td>Invalid Input (because is one of unaccepted word in unAcceptedWord array in userdata.js file)</td>
+    </tr>
+    <tr>
+      <td>Search for Images</td>
+      <td>&</td>
+      <td>Invalid Input</td>
+    </tr>
+    <tr>
+      <td>Search for Images</td>
+      <td>death in world</td>
+      <td>Invalid Input</td>
+    </tr>
+  </tbody>
+</table>
+
+  ![Screenshot of signup validation](/assets/images/imageSearchValid.png)
+
+  When a user enters valid search keywords, the system retrieves relevant images from the Unsplash API and displays the results on the webpage.
+
+ ![Screenshot of signup validation](/assets/images/validImageSearch.png)
 
 
 
