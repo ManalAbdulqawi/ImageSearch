@@ -306,6 +306,11 @@ I tested various input scenarios on the ImageSearch page image search box to ens
       <td>death in world</td>
       <td>Invalid Input</td>
     </tr>
+    <tr>
+      <td>Search for Images</td>
+      <td>fhgfjfjfjjfhjfjhjfjhj</td>
+      <td>Invalid Input</td>
+    </tr>
   </tbody>
 </table>
 
@@ -317,13 +322,62 @@ When a user enters valid search keywords, the system retrieves relevant images f
 
 ## Bugs
 
-- Handlling this console error (Failed to load resource: the server responded with a status of 400 ()) when the user entered wrong data.
+- (Failed to load resource: the server responded with a status of 400 ()) when the user entered wrong data.
 
 ![Screenshot of invalid](/assets/images/invalid.png)
 
+- The Bug after handling it by adding if and else statements in userdata.js
+
+ async function searchImages() {
+  keyWord = inputImage.value;
+  const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
+  try {
+    const response = await fetch(url);
+    ` if (response.ok) ` {
+      const data = await response.json();
+      const results = data.results;
+      ` if (results && results.length > 0) ` {
+        if (page === 1) {
+          imgWrapper.innerHTML = "";
+        }
+
+        results.map((result) => {
+          const imgDiv = document.createElement("div");
+          imgDiv.classList.add("result-image");
+          const img = document.createElement("img");
+          img.src = result.urls.small;
+          img.alt = result.alt_description;
+          const imgLink = document.createElement("a");
+          imgLink.href = result.links.html;
+          imgLink.target = "_blank";
+          imgLink.textContent = result.alt_description;
+          imgDiv.appendChild(img);
+          imgDiv.appendChild(imgLink);
+          imgWrapper.appendChild(imgDiv);
+        });
+
+        page++;
+        if (page > 1) {
+          loadButton.style.display = "block";
+        }
+      } else {
+        noSearchResult();
+      }
+    } 
+    
+**`else { console.error("Error response:", response.status, response.statusText); noSearchResult();}`** 
+} 
+catch (err) {
+    noSearchResult();
+  }
+}
+
+![Screenshot of handled bug](/assets/images/handleBug.png)
+
+
 ## Future Improvment
 
-- Handling the error: "Failed to load resource — server responded with status 400."
+- Implement automated testing using Jest to ensure code reliability and facilitate easier maintenance.
 
 ## Deployment
 

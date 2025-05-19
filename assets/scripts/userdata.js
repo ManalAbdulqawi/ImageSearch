@@ -30,38 +30,38 @@ async function searchImages() {
   const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
   try {
     const response = await fetch(url);
-    if (!response.ok) {
-      console.error("Error response:", response.status, response.statusText);
-      noSearchResult();
-      return;
-    }
-    const data = await response.json();
-    const results = data.results;
-    if (results) {
-      if (page === 1) {
-        imgWrapper.innerHTML = "";
-      }
+    if (response.ok) {
+      const data = await response.json();
+      const results = data.results;
+      if (results && results.length > 0) {
+        if (page === 1) {
+          imgWrapper.innerHTML = "";
+        }
 
-      results.map((result) => {
-        const imgDiv = document.createElement("div");
-        imgDiv.classList.add("result-image");
-        const img = document.createElement("img");
-        img.src = result.urls.small;
-        img.alt = result.alt_description;
-        const imgLink = document.createElement("a");
-        imgLink.href = result.links.html;
-        imgLink.target = "_blank";
-        imgLink.textContent = result.alt_description;
-        imgDiv.appendChild(img);
-        imgDiv.appendChild(imgLink);
-        imgWrapper.appendChild(imgDiv);
-      });
+        results.map((result) => {
+          const imgDiv = document.createElement("div");
+          imgDiv.classList.add("result-image");
+          const img = document.createElement("img");
+          img.src = result.urls.small;
+          img.alt = result.alt_description;
+          const imgLink = document.createElement("a");
+          imgLink.href = result.links.html;
+          imgLink.target = "_blank";
+          imgLink.textContent = result.alt_description;
+          imgDiv.appendChild(img);
+          imgDiv.appendChild(imgLink);
+          imgWrapper.appendChild(imgDiv);
+        });
 
-      page++;
-      if (page > 1) {
-        loadButton.style.display = "block";
+        page++;
+        if (page > 1) {
+          loadButton.style.display = "block";
+        }
+      } else {
+        noSearchResult();
       }
     } else {
+      console.error("Error response:", response.status, response.statusText);
       noSearchResult();
     }
   } catch (err) {
