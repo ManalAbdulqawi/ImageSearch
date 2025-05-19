@@ -244,11 +244,11 @@ I tested various input scenarios on the Login page to ensure that invalid data i
   </tbody>
 </table>
 
-  ![Screenshot of signup validation](/assets/images/signinValid.png)
+  ![Screenshot of signin validation](/assets/images/signinValid.png)
 
    When a user successfully log in with valid data, they will be redirected to the ImageSearch page, where a personalized welcome message will be displayed at the top of the page.
 
- ![Screenshot of signup validation](/assets/images/validSignup.png)
+ ![Screenshot of signin validation](/assets/images/validSignup.png)
 
 
  ### ImageSearch Page Validation
@@ -280,11 +280,107 @@ I tested various input scenarios on the ImageSearch page image search box to ens
   </tbody>
 </table>
 
-  ![Screenshot of signup validation](/assets/images/imageSearchValid.png)
+  ![Screenshot of imagesearch validation](/assets/images/imageSearchValid.png)
 
   When a user enters valid search keywords, the system retrieves relevant images from the Unsplash API and displays the results on the webpage.
 
- ![Screenshot of signup validation](/assets/images/validImageSearch.png)
+ ![Screenshot of imagesearch validation](/assets/images/validImageSearch.png)
+
+ ## Bugs
+
+- Handlling this console error (Failed to load resource: the server responded with a status of 400 ()) when the user entered wrong data.
+
+ ![Screenshot of invalid](/assets/images/invalid.png)
+
+
+ ## Future Improvment 
+
+- Handling the error: "Failed to load resource — server responded with status 400."
+
+## Deployment
+
+### Version Control
+
+- The site was created using Visual Studio Code and pushed to Github to the remote repository.
+- Git commands were used throughout the development to push the code to the remote repository. The following git commands were used:
+  - git add . - to add the files to the staging area before being committed.
+  - git commit -m "commit message" - to commit changes to the local repository queue that are ready for the final step.
+  - git push - to push all committed code to the remote repository on Github.
+
+### Deployment to Netlify
+
+- The site was deployed to https://app.netlify.com/:
+  - In the main page click on Add new site drop down list ,and choose Import an existing project
+  - Choose github, then choose the project repository
+  - Give the site name,and choose main for branch to deploy
+  - Click Deploy button and wait until the deployment process finish
+- The live link: [ImageSearch](https://imagesearchengn.netlify.app/index.html)
+
+### Cloning of the Repository Code locally
+
+- Go to the Github repository that you want to clone
+- Click on the Code button located above all the project files
+- Click on HTTPS and copy the repository link
+- Open the IDE of your choice and and paste the copied git url into the IDE terminal
+- The project is now created as a local clone
+
+## Wireframes
+-   The initial design and layout of the ImageSerach, Signup, Signin webpages were planned using the marvelapp designing tool.
+
+- Desktop, Tablet, and Mobile Page Wireframe
+
+![screenshot of ImageSearch page wireframe](assets/images/imageSearchFrame.png)
+
+![screenshot of signup page wireframe](assets/images/signupFrame.png)
+
+![screenshot of signin page wireframe](assets/images/loginFrame.png)
+
+
+## Project Life Cycle
+
+![Screenshot of the websites homepage on different devices](assets/images/lifecycle.png)
+
+
+## Planning & Analysis
+
+I have decided to develop an ImageSearch website featuring signup and signin functionalities, enabling users to securely search images while enjoying a personalized experience. Additionally, this project provides an opportunity to practice validating user input data and effectively integrating external APIs.
+
+## Define Requirements
+
+This phase transforms the outcomes of the planning and analysis phase into clear, actionable requirements by developing user stories.
+
+## Design
+
+The design phase turns the outcomes of the define requirements phase into real wireframes.
+
+## Development
+
+Create a repository on GitHub and clone it locally to begin coding the ImageSearch website using VSCode, HTML, CSS, and JavaScript and Unsplash API. 
+
+## Testing
+
+Conduct tests for HTML, CSS, and JavaScript to identify bugs, assess performance, ensure accessibility, check responsiveness, validate user inputs, and verify alignment with user expectations.
+
+## Deployment
+
+Deploy the website using GitHub and Netlify, then test it again as a live site.
+
+## Maintenance
+
+Fix any bugs and errors that were missed in the earlier testing phase. Additionally, create a README file for the website repository to provide documentation.
+
+## Credits
+- Special thanks to my mentor, Spencer_ci, and my Lecturer Robert Thompson from Dudley College for their invaluable support and for answering all my questions on Slack and Teams!
+
+### Content
+- The icons in Signup and Login pages from [Boxicons](https://boxicons.com/).
+- The images in ImageSearch from [Unsplash](https://unsplash.com/).
+- The tab icon is sourced from [favicon.io](https://favicon.io/)
+- The Email regex from [tecadmin] (https://tecadmin.net/validate-email-address-in-javascript/)
+- The project inspired from this [YouTube tutorial](https://www.youtube.com/watch?v=E4znbZgUWzA).
+
+## Author
+Manal Abdulqawi
 
 
 
