@@ -108,6 +108,21 @@ The purpose of this website is to provide users with a user-friendly and secure 
 
 ## Testing
 
+### Automated Testing:
+
+A testing approach that uses software tools and scripts to automatically execute test cases, ensuring consistency, efficiency, and repeatability.
+
+### Manual Testing:
+
+A testing approach where testers manually execute test cases without automation, relying on human judgment to evaluate functionality, usability, and user experience.
+
+Summary:
+
+- Automated testing is best suited for repetitive, high-volume, and regression scenarios where speed and accuracy are crucial.
+- Manual testing is essential for usability, exploratory, and subjective assessments that require human insight.
+
+Both approaches complement each other and are often used together in a comprehensive testing strategy.
+
 - Accessibility
 
   - I ran the pages through Lighthouse and confirmed that the colors and fonts are easy to read and that the site is accessible.
@@ -178,10 +193,12 @@ I tested a range of web browswers. See an example of tests below.
   ![Screenshot of the jshint validator result](/assets/images/jshint1.png)
   ![Screenshot of the jshint validator result](/assets/images/jshint2.png)
 
-
   ## Validation Testing
+
 ### Signup Page Validation
+
 I tested various input scenarios on the Signup page to ensure that invalid data is correctly rejected and valid data is accepted and stored in localStorage. Below are some examples of the test cases conducted.
+
 <table>
   <thead>
     <tr>
@@ -214,14 +231,16 @@ I tested various input scenarios on the Signup page to ensure that invalid data 
   </tbody>
 </table>
 
-  ![Screenshot of signup validation](/assets/images/signupValid.png)
+![Screenshot of signup validation](/assets/images/signupValid.png)
 
- When a user successfully signs up with valid data, they will be redirected to the ImageSearch page, where a personalized welcome message will be displayed at the top of the page.
+When a user successfully signs up with valid data, they will be redirected to the ImageSearch page, where a personalized welcome message will be displayed at the top of the page.
 
-   ![Screenshot of signup validation](/assets/images/validSignup.png)
+![Screenshot of signup validation](/assets/images/validSignup.png)
 
 ### Login Page Validation
+
 I tested various input scenarios on the Login page to ensure that invalid data is correctly rejected and valid data is accepted and match the user data which stored in localStorage. Below are some examples of the test cases conducted.
+
 <table>
   <thead>
     <tr>
@@ -244,15 +263,16 @@ I tested various input scenarios on the Login page to ensure that invalid data i
   </tbody>
 </table>
 
-  ![Screenshot of signin validation](/assets/images/signinValid.png)
+![Screenshot of signin validation](/assets/images/signinValid.png)
 
-   When a user successfully log in with valid data, they will be redirected to the ImageSearch page, where a personalized welcome message will be displayed at the top of the page.
+When a user successfully log in with valid data, they will be redirected to the ImageSearch page, where a personalized welcome message will be displayed at the top of the page.
 
- ![Screenshot of signin validation](/assets/images/validSignup.png)
+![Screenshot of signin validation](/assets/images/validSignup.png)
 
+### ImageSearch Page Validation
 
- ### ImageSearch Page Validation
 I tested various input scenarios on the ImageSearch page image search box to ensure that invalid data is correctly rejected and valid data is accepted. Below are some examples of the test cases conducted.
+
 <table>
   <thead>
     <tr>
@@ -280,20 +300,19 @@ I tested various input scenarios on the ImageSearch page image search box to ens
   </tbody>
 </table>
 
-  ![Screenshot of imagesearch validation](/assets/images/imageSearchValid.png)
+![Screenshot of imagesearch validation](/assets/images/imageSearchValid.png)
 
-  When a user enters valid search keywords, the system retrieves relevant images from the Unsplash API and displays the results on the webpage.
+When a user enters valid search keywords, the system retrieves relevant images from the Unsplash API and displays the results on the webpage.
 
- ![Screenshot of imagesearch validation](/assets/images/validImageSearch.png)
+![Screenshot of imagesearch validation](/assets/images/validImageSearch.png)
 
- ## Bugs
+## Bugs
 
 - Handlling this console error (Failed to load resource: the server responded with a status of 400 ()) when the user entered wrong data.
 
- ![Screenshot of invalid](/assets/images/invalid.png)
+![Screenshot of invalid](/assets/images/invalid.png)
 
-
- ## Future Improvment 
+## Future Improvment
 
 - Handling the error: "Failed to load resource — server responded with status 400."
 
@@ -325,7 +344,8 @@ I tested various input scenarios on the ImageSearch page image search box to ens
 - The project is now created as a local clone
 
 ## Wireframes
--   The initial design and layout of the ImageSerach, Signup, Signin webpages were planned using the marvelapp designing tool.
+
+- The initial design and layout of the ImageSerach, Signup, Signin webpages were planned using the marvelapp designing tool.
 
 - Desktop, Tablet, and Mobile Page Wireframe
 
@@ -335,11 +355,9 @@ I tested various input scenarios on the ImageSearch page image search box to ens
 
 ![screenshot of signin page wireframe](assets/images/loginFrame.png)
 
-
 ## Project Life Cycle
 
 ![Screenshot of the websites homepage on different devices](assets/images/lifecycle.png)
-
 
 ## Planning & Analysis
 
@@ -355,7 +373,7 @@ The design phase turns the outcomes of the define requirements phase into real w
 
 ## Development
 
-Create a repository on GitHub and clone it locally to begin coding the ImageSearch website using VSCode, HTML, CSS, and JavaScript and Unsplash API. 
+Create a repository on GitHub and clone it locally to begin coding the ImageSearch website using VSCode, HTML, CSS, and JavaScript and Unsplash API.
 
 ## Testing
 
@@ -370,9 +388,11 @@ Deploy the website using GitHub and Netlify, then test it again as a live site.
 Fix any bugs and errors that were missed in the earlier testing phase. Additionally, create a README file for the website repository to provide documentation.
 
 ## Credits
+
 - Special thanks to my mentor, Spencer_ci, and my Lecturer Robert Thompson from Dudley College for their invaluable support and for answering all my questions on Slack and Teams!
 
 ### Content
+
 - The icons in Signup and Login pages from [Boxicons](https://boxicons.com/).
 - The images in ImageSearch from [Unsplash](https://unsplash.com/).
 - The tab icon is sourced from [favicon.io](https://favicon.io/)
@@ -380,8 +400,5 @@ Fix any bugs and errors that were missed in the earlier testing phase. Additiona
 - The project inspired from this [YouTube tutorial](https://www.youtube.com/watch?v=E4znbZgUWzA).
 
 ## Author
+
 Manal Abdulqawi
-
-
-
-

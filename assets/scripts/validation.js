@@ -4,7 +4,7 @@ const email_input = document.getElementById("email_input");
 const password_input = document.getElementById("password_input");
 const repeat_password_input = document.getElementById("repeat_password_input");
 const err_msg = document.getElementById("err-msg");
-const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;// the regex from https://tecadmin.net/validate-email-address-in-javascript/
 
 window.onload = function () {
   document.body.style.backgroundImage = 'url("assets/images/p1.jpg")';
