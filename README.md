@@ -119,7 +119,8 @@ The purpose of this website is to provide users with a user-friendly and secure 
   ![Screenshot of the imageSearch page Lighthouse](assets/images/signupLH.png)
 
 ## Responsive Testing
-    <table>
+
+<table>
     <thead>
       <tr>
         <th>Tested Item</th>
@@ -138,7 +139,7 @@ The purpose of this website is to provide users with a user-friendly and secure 
         <td>All website's buttons, images and links are placed as intended (Tested).</td>
       </tr>
     </tbody>
-   </table>
+</table>
    
 ## Browser Testing
 I tested a range of web browswers. See an example of tests below.
