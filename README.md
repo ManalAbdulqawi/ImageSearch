@@ -329,7 +329,7 @@ When a user enters valid search keywords, the system retrieves relevant images f
 - The Bug after handling it by adding if **`if(response.ok)`**, if (results && **`results.length > 0`**) and **else {console.error("Error response:", response.status, response.statusText);**
   **noSearchResult();}** else statements in userdata.js
 
-  
+
 
           async function searchImages() {
           keyWord = inputImage.value;
@@ -454,6 +454,8 @@ Fix any bugs and errors that were missed in the earlier testing phase. Additiona
 ## Credits
 
 - Special thanks to my mentor, Spencer_ci, and my Lecturer Robert Thompson from Dudley College for their invaluable support and for answering all my questions on Slack and Teams!
+-I used [DeepAI](https://deepai.org/) to receive suggestions for handling bugs in the code..
+
 
 ### Content
 
