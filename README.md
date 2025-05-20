@@ -454,7 +454,7 @@ Fix any bugs and errors that were missed in the earlier testing phase. Additiona
 ## Credits
 
 - Special thanks to my mentor, Spencer_ci, and my Lecturer Robert Thompson from Dudley College for their invaluable support and for answering all my questions on Slack and Teams!
--I used [DeepAI](https://deepai.org/) to receive suggestions for handling bugs in the code..
+- I used [DeepAI](https://deepai.org/) to receive suggestions for handling bugs in the code..
 
 
 ### Content
