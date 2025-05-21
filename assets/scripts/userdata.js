@@ -24,8 +24,9 @@ let unAcceptedWord = [
 /**
  * This method fetch the images according the user input from unsplash api
  */
-// Some parts of this function code I have learned it from the youtube video in readme file
 async function searchImages() {
+  // Some parts of this function code I have learned them from the youtube video in readme file
+
   keyWord = inputImage.value;
   const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
   try {
