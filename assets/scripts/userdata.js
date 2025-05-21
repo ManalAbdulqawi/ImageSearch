@@ -62,7 +62,6 @@ async function searchImages() {
         noSearchResult();
       }
     } else {
-      console.error("Error response:", response.status, response.statusText);
       noSearchResult();
     }
   } catch (err) {
