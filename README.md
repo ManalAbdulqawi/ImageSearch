@@ -430,15 +430,15 @@ I have decided to develop an ImageSearch website featuring signup and signin fun
 
 ## Define Requirements
 
-This phase transforms the outcomes of the planning and analysis phase into clear, actionable requirements by developing user stories.
+This phase transforms the outcomes of the planning and analysis phase into clear, actionable requirements by developing user stories. During this phase, I divided the project into three modules: ImageSearch, SignIn, and SignUp. I also defined the user stories for each module to clarify their functionalities and user interactions.
 
 ## Design
 
-The design phase turns the outcomes of the define requirements phase into real wireframes.
+The design phase translates the requirements gathered earlier into detailed wireframes and visual layouts. During this stage, I developed the HTML and CSS for each module (ImageSearch, SignIn, and SignUp), establishing the structure and visual style to ensure a cohesive user experience.
 
 ## Development
 
-Create a repository on GitHub and clone it locally to begin coding the ImageSearch website using VSCode, HTML, CSS, and JavaScript and Unsplash API.
+Create a repository on GitHub and clone it locally to start developing each module independently. Use JavaScript to implement validation functions and enable interaction with the Unsplash API. After completing the individual modules (ImageSearch, SignIn, and SignUp), integrate them into a cohesive application. Ensure smooth navigation between modules and verify that user interactions are handled correctly—for example, when a user signs in, they should be redirected to the ImageSearch page with a personalized welcome message displaying their name.
 
 ## Testing
 
