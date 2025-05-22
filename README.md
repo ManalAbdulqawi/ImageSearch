@@ -15,6 +15,46 @@ The ImageSearch website is a dynamic platform that allows users to search for im
 
 The purpose of this website is to provide users with a user-friendly and secure platform for searching images. It offers a personalized experience by enabling users to sign up and log in. Additionally, the website incorporates safeguards to prevent users from searching for inappropriate or sensitive words, such as violence and similar terms. Therefore, the ImageSearch platform is a safe and reliable environment suitable for both young and adult users to explore images securely.
 
+## Table of Contents
+
+1. [UX](#ImageSearch User Stories)
+    - [User Story 1](#user-story-1)
+    - [User Story 2](#user-story-2)
+    - [User Story 3](#user-story-3)
+
+
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Setup and Installation](#setup-and-installation)
+    - [Testing](#testing)
+       - [Automated Testing](#automated-testing)
+       - [Manual Testing](#manual-testing)
+       - [Accessibility Testing](#accessibility-testing)
+       - [Responsive Testing](#responsive-testing)
+       - [Browser Testing](#browser-testing)
+    - [Validation Testing](#validation-testing) 
+       - [Signup Page Validation](#signup-page-validation) 
+       - [Login Page Validation](#login-page-validation)
+       - [ImageSearch Page Validation](#imageSearch-page-validation)
+    - [Bugs](#bugs) 
+    - [Future Improvment](#future-improvment)
+    - [Deployment](#deployment)
+       - [Version Control](#version-control)
+       - [Deployment to Netlify](#deployment-to-netlify)
+       - [Cloning of the Repository Code locally](#cloning-of-the-Repository-Code-locally)
+5. [Wireframes](#Wireframes)
+6. [Project Life Cycle](#project-life-cycle)
+    - [Planning & Analysis](#planning-and-analysis)
+    - [Define Requirements](#define-requirements)
+    - [Design](#design)
+    - [Development](#development)
+    - [Testings](#testings)
+    - [Deployment](#deployment)
+    - [Maintenance](#maintenance)
+7. [Credits](#credits)
+8. [Content](#content)
+9. [Author](#author)
+
 # ImageSearch User Stories
 
 ## User Story 1
@@ -105,7 +145,7 @@ The purpose of this website is to provide users with a user-friendly and secure 
 - **Browser LocalSrorage**: Used to store registered user data during sign-up and to authenticate users during login by matching entered credentials with existing data stored in localStorage.
 - **Unsplash API**: Fetches images based on the keywords entered by the user, providing relevant search results.
 
-## Setup and Installation
+# Setup and Installation
 
 ## Testing
 
@@ -124,7 +164,7 @@ Summary:
 
 Both approaches complement each other and are often used together in a comprehensive testing strategy.
 
-- Accessibility
+### Accessibility Testing
 
   - I ran the pages through Lighthouse and confirmed that the colors and fonts are easy to read and that the site is accessible.
 
@@ -134,7 +174,7 @@ Both approaches complement each other and are often used together in a comprehen
 
   ![Screenshot of the imageSearch page Lighthouse](assets/images/signupLH.png)
 
-## Responsive Testing
+### Responsive Testing
 
 <table>
     <thead>
@@ -157,7 +197,7 @@ Both approaches complement each other and are often used together in a comprehen
     </tbody>
 </table>
    
-## Browser Testing
+### Browser Testing
 I tested a range of web browswers. See an example of tests below.
 <table>
   <thead>
@@ -408,7 +448,7 @@ When a user enters valid search keywords, the system retrieves relevant images f
 - Open the IDE of your choice and and paste the copied git url into the IDE terminal
 - The project is now created as a local clone
 
-## Wireframes
+# Wireframes
 
 - The initial design and layout of the ImageSerach, Signup, Signin webpages were planned using the marvelapp designing tool.
 
@@ -420,11 +460,11 @@ When a user enters valid search keywords, the system retrieves relevant images f
 
 ![screenshot of signin page wireframe](assets/images/loginFrame.png)
 
-## Project Life Cycle
+# Project Life Cycle
 
 ![Screenshot of the websites homepage on different devices](assets/images/lifecycle.png)
 
-## Planning & Analysis
+## Planning and Analysis
 
 I have decided to develop an ImageSearch website featuring signup and signin functionalities, enabling users to securely search images while enjoying a personalized experience. Additionally, this project provides an opportunity to practice validating user input data and effectively integrating external APIs.
 
@@ -440,7 +480,7 @@ The design phase translates the requirements gathered earlier into detailed wire
 
 Create a repository on GitHub and clone it locally to start developing each module independently. Use JavaScript to implement validation functions and enable interaction with the Unsplash API. After completing the individual modules (ImageSearch, SignIn, and SignUp), integrate them into a cohesive application. Ensure smooth navigation between modules and verify that user interactions are handled correctly—for example, when a user signs in, they should be redirected to the ImageSearch page with a personalized welcome message displaying their name.
 
-## Testing
+## Testings
 
 Conduct tests for HTML, CSS, and JavaScript to identify bugs, assess performance, ensure accessibility, check responsiveness, validate user inputs, and verify alignment with user expectations.
 
@@ -452,13 +492,13 @@ Deploy the website using GitHub and Netlify, then test it again as a live site.
 
 Fix any bugs and errors that were missed in the earlier testing phase. Additionally, create a README file for the website repository to provide documentation.
 
-## Credits
+# Credits
 
 - Special thanks to my mentor, Spencer_ci, and my Lecturer Robert Thompson from Dudley College for their invaluable support and for answering all my questions on Slack and Teams!
 - I used [DeepAI](https://deepai.org/) to receive suggestions for handling bugs in the code..
 
 
-### Content
+# Content
 
 - The icons in Signup and Login pages from [Boxicons](https://boxicons.com/).
 - The images in ImageSearch from [Unsplash](https://unsplash.com/).
@@ -466,6 +506,6 @@ Fix any bugs and errors that were missed in the earlier testing phase. Additiona
 - The Email regex from [tecadmin](https://tecadmin.net/validate-email-address-in-javascript/)
 - The project inspired from this [YouTube tutorial](https://www.youtube.com/watch?v=E4znbZgUWzA).
 
-## Author
+# Author
 
 Manal Abdulqawi
