@@ -17,7 +17,7 @@ The purpose of this website is to provide users with a user-friendly and secure 
 
 ## Table of Contents
 
-1. [UX](#ImageSearch User Stories)
+1. [ImageSearch User Stories](#imageSearch-user-stories)
     - [User Story 1](#user-story-1)
     - [User Story 2](#user-story-2)
     - [User Story 3](#user-story-3)
