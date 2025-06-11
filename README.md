@@ -366,44 +366,38 @@ When a user enters valid search keywords, the system retrieves relevant images f
 
 The code in userdata.js file before handling this error was:
 
-async function searchImages() {
-keyWord = inputImage.value;
-const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
-try {
-const response = await fetch(url);
-const data = await response.json();
-const results = data.results;
-if (results) {
-if (page === 1) {
-imgWrapper.innerHTML = "";
-}
-
-          results.map((result) => {
-            const imgDiv = document.createElement("div");
-            imgDiv.classList.add("result-image");
-            const img = document.createElement("img");
-            img.src = result.urls.small;
-            img.alt = result.alt_description;
-            const imgLink = document.createElement("a");
-            imgLink.href = result.links.html;
-            imgLink.target = "_blank";
-            imgLink.textContent = result.alt_description;
-            imgDiv.appendChild(img);
-            imgDiv.appendChild(imgLink);
-            imgWrapper.appendChild(imgDiv);
-          });
-
-          page++;
-          if (page > 1) {
-            loadButton.style.display = "block";
-          }
-        } else {
-          noSearchResult();
-        }
-      } catch (err) {
-           noSearchResult();
-      }
-      }
+              async function searchImages() {
+               keyWord = inputImage.value;
+               const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
+               try {
+                  const response = await fetch(url);
+                  const data = await response.json();
+                  const results = data.results;
+                  if (results) {
+                  if (page === 1) {
+                   imgWrapper.innerHTML = "";
+                  }
+                results.forEach((result) => {
+                const imgDiv = document.createElement("div");
+                imgDiv.classList.add("result-image");
+                const img = document.createElement("img");
+                img.src = result.urls.small;
+                img.alt = result.alt_description;
+                const imgLink = document.createElement("a");
+                imgLink.href = result.links.html;
+                imgLink.target = "_blank";
+                imgLink.textContent = result.alt_description;
+                imgDiv.appendChild(img);
+                imgDiv.appendChild(imgLink);
+                imgWrapper.appendChild(imgDiv);});
+                page++;
+                 if (page > 1) {
+        l        oadButton.style.display = "block";}}
+                 else {
+                noSearchResult();}}
+                 catch (err) {
+                  noSearchResult();}
+                  }
 
 ![Screenshot of invalid](/assets/images/invalid.png)
 
@@ -427,9 +421,10 @@ If the API endpoint URL is malformed
 - The Bug handled by checking if the (response) variable status is success be adding this if statment after fetch function **`if(response.ok)`**
 
 - After receiving the HTTP response from the fetch request, this line of code (const data = await response.json();)
-   - parses the response body as JSON
-   - The await keyword ensures the code waits until the JSON parsing is complete.
-   - The resulting object is stored in data.
+
+  - parses the response body as JSON
+  - The await keyword ensures the code waits until the JSON parsing is complete.
+  - The resulting object is stored in data.
 
 - This code (const results = data.results;) assumes that the JSON object (data) has a property called results.
   For example, the API response might look like:
