@@ -411,14 +411,9 @@ const response = await fetch(url);
 
 If the requesting url is incorrect, contains invalid parameters, or is missing required data, the server may respond with a 400 status.
 
-For example:
+For example: when keyWord is empty or contains invalid characters, page number is invalid, your apiKey is incorrect or missing, or the API endpoint URL is malformed
 
-If keyWord is empty or contains invalid characters
-If page number is invalid
-If your apiKey is incorrect or missing
-If the API endpoint URL is malformed
-
-- The Bug handled by checking if the (response) variable status is success be adding this if statment after fetch function **`if(response.ok)`**
+- The bug was addressed by adding an if (response.ok) statement after the fetch function to verify that the HTTP response was successful.
 
 - After receiving the HTTP response from the fetch request, this line of code (const data = await response.json();)
 
