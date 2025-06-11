@@ -4,7 +4,6 @@
 
 The ImageSearch website is a dynamic platform that allows users to search for images using the Unsplash API. Additionally, users can personalize their experience by creating an account through the sign-up and login features. - The live link: [ImageSearch](https://imagesearchengn.netlify.app/index.html)
 
-
 ![Screenshot of the websites homepage on different devices](assets/images/responsiveImageSearch.png)
 
 ![Screenshot of the websites homepage on different devices](assets/images/responsiveLogin.png)
@@ -18,39 +17,39 @@ The purpose of this website is to provide users with a user-friendly and secure 
 ## Table of Contents
 
 1. [ImageSearch User Stories](#imageSearch-user-stories)
-    - [User Story 1](#user-story-1)
-    - [User Story 2](#user-story-2)
-    - [User Story 3](#user-story-3)
 
+   - [User Story 1](#user-story-1)
+   - [User Story 2](#user-story-2)
+   - [User Story 3](#user-story-3)
 
 2. [Features](#features)
 3. [Technologies Used](#technologies-used)
 4. [Setup and Installation](#setup-and-installation)
-    - [Testing](#testing)
-       - [Automated Testing](#automated-testing)
-       - [Manual Testing](#manual-testing)
-       - [Accessibility Testing](#accessibility-testing)
-       - [Responsive Testing](#responsive-testing)
-       - [Browser Testing](#browser-testing)
-    - [Validation Testing](#validation-testing) 
-       - [Signup Page Validation](#signup-page-validation) 
-       - [Login Page Validation](#login-page-validation)
-       - [ImageSearch Page Validation](#imageSearch-page-validation)
-    - [Bugs](#bugs) 
-    - [Future Improvment](#future-improvment)
-    - [Deployment](#deployment)
-       - [Version Control](#version-control)
-       - [Deployment to Netlify](#deployment-to-netlify)
-       - [Cloning of the Repository Code locally](#cloning-of-the-Repository-Code-locally)
+   - [Testing](#testing)
+     - [Automated Testing](#automated-testing)
+     - [Manual Testing](#manual-testing)
+     - [Accessibility Testing](#accessibility-testing)
+     - [Responsive Testing](#responsive-testing)
+     - [Browser Testing](#browser-testing)
+   - [Validation Testing](#validation-testing)
+     - [Signup Page Validation](#signup-page-validation)
+     - [Login Page Validation](#login-page-validation)
+     - [ImageSearch Page Validation](#imageSearch-page-validation)
+   - [Bugs](#bugs)
+   - [Future Improvment](#future-improvment)
+   - [Deployment](#deployment)
+     - [Version Control](#version-control)
+     - [Deployment to Netlify](#deployment-to-netlify)
+     - [Cloning of the Repository Code locally](#cloning-of-the-Repository-Code-locally)
 5. [Wireframes](#Wireframes)
 6. [Project Life Cycle](#project-life-cycle)
-    - [Planning & Analysis](#planning-and-analysis)
-    - [Define Requirements](#define-requirements)
-    - [Design](#design)
-    - [Development](#development)
-    - [Testings](#testings)
-    - [Deployment](#deployment)
-    - [Maintenance](#maintenance)
+   - [Planning & Analysis](#planning-and-analysis)
+   - [Define Requirements](#define-requirements)
+   - [Design](#design)
+   - [Development](#development)
+   - [Testings](#testings)
+   - [Deployment](#deployment)
+   - [Maintenance](#maintenance)
 7. [Credits](#credits)
 8. [Content](#content)
 9. [Author](#author)
@@ -166,13 +165,13 @@ Both approaches complement each other and are often used together in a comprehen
 
 ### Accessibility Testing
 
-  - I ran the pages through Lighthouse and confirmed that the colors and fonts are easy to read and that the site is accessible.
+- I ran the pages through Lighthouse and confirmed that the colors and fonts are easy to read and that the site is accessible.
 
-  ![Screenshot of the imageSearch page Lighthouse](assets/images/imageSearchLH.png)
+![Screenshot of the imageSearch page Lighthouse](assets/images/imageSearchLH.png)
 
-  ![Screenshot of the imageSearch page Lighthouse](assets/images/loginLH.png)
+![Screenshot of the imageSearch page Lighthouse](assets/images/loginLH.png)
 
-  ![Screenshot of the imageSearch page Lighthouse](assets/images/signupLH.png)
+![Screenshot of the imageSearch page Lighthouse](assets/images/signupLH.png)
 
 ### Responsive Testing
 
@@ -363,14 +362,97 @@ When a user enters valid search keywords, the system retrieves relevant images f
 
 ## Bugs
 
-- (Failed to load resource: the server responded with a status of 400 ()) when the user entered wrong data.
+- (Failed to load resource: the server responded with a status of 400 ()) when the user entered wrong data like "&^_^^_%\*%&^%^$^%$%".
+
+The code in userdata.js file before handling this error was:
+
+async function searchImages() {
+keyWord = inputImage.value;
+const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
+try {
+const response = await fetch(url);
+const data = await response.json();
+const results = data.results;
+if (results) {
+if (page === 1) {
+imgWrapper.innerHTML = "";
+}
+
+          results.map((result) => {
+            const imgDiv = document.createElement("div");
+            imgDiv.classList.add("result-image");
+            const img = document.createElement("img");
+            img.src = result.urls.small;
+            img.alt = result.alt_description;
+            const imgLink = document.createElement("a");
+            imgLink.href = result.links.html;
+            imgLink.target = "_blank";
+            imgLink.textContent = result.alt_description;
+            imgDiv.appendChild(img);
+            imgDiv.appendChild(imgLink);
+            imgWrapper.appendChild(imgDiv);
+          });
+
+          page++;
+          if (page > 1) {
+            loadButton.style.display = "block";
+          }
+        } else {
+          noSearchResult();
+        }
+      } catch (err) {
+           noSearchResult();
+      }
+      }
 
 ![Screenshot of invalid](/assets/images/invalid.png)
 
-- The Bug after handling it by adding if **`if(response.ok)`**, if (results && **`results.length > 0`**) and **else {console.error("Error response:", response.status, response.statusText);**
-  **noSearchResult();}** else statements in userdata.js
+- The 400 Bad Request status code signifies that the server cannot process the request because the client sent invalid or malformed data.
+  Common causes include: incorrect URL syntax, missing or invalid parameters, malformed request headers or sending data that the server cannot understand.
 
+When performing a fetch request:
 
+const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
+const response = await fetch(url);
+
+If the requesting url is incorrect, contains invalid parameters, or is missing required data, the server may respond with a 400 status.
+
+For example:
+
+If keyWord is empty or contains invalid characters
+If page number is invalid
+If your apiKey is incorrect or missing
+If the API endpoint URL is malformed
+
+- The Bug handled by checking if the (response) variable status is success be adding this if statment after fetch function **`if(response.ok)`**
+
+- After receiving the HTTP response from the fetch request, this line of code (const data = await response.json();)
+   - parses the response body as JSON
+   - The await keyword ensures the code waits until the JSON parsing is complete.
+   - The resulting object is stored in data.
+
+- This code (const results = data.results;) assumes that the JSON object (data) has a property called results.
+  For example, the API response might look like:
+  {
+  "results": [ ... array of images ... ],
+  "total": 100,
+  "page": 1,
+  ...
+  }
+  Then results variable will be assigned this array.
+
+- Adding this if (results && results.length > 0) checks two things:
+
+  - results array is truthy (not null, undefined, or other falsy values).
+  - results.length > 0, meaning there are one or more items in the results array.
+    This condition ensures that:
+    The API returned a results array.
+    The array is not empty.
+    Only if both conditions are true, the code inside the if block execute and display the images.
+
+- If the HTTP response status is not ok the else statment will execute **else {noSearchResult();}** in userdata.js.
+
+Here is the full code snippet, including the part that handles the bug.
 
           async function searchImages() {
           keyWord = inputImage.value;
@@ -407,13 +489,12 @@ When a user enters valid search keywords, the system retrieves relevant images f
         } else {
           noSearchResult();
         }
-      } **else {console.error("Error response:", response.status, response.statusText);**
-        **noSearchResult();}**
+      } **else {noSearchResult();}**
 
-  } catch (err) {
-  noSearchResult();
-  }
-  }
+} catch (err) {
+noSearchResult();
+}
+}
 
 ![Screenshot of handled bug](/assets/images/handleBug.png)
 
@@ -496,7 +577,6 @@ Fix any bugs and errors that were missed in the earlier testing phase. Additiona
 
 - Special thanks to my mentor, Spencer_ci, and my Lecturer Robert Thompson from Dudley College for their invaluable support and for answering all my questions on Slack and Teams!
 - I used [DeepAI](https://deepai.org/) to receive suggestions for handling bugs in the code..
-
 
 # Content
 

@@ -31,6 +31,14 @@ async function searchImages() {
   const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${apiKey}`;
   try {
     const response = await fetch(url);
+
+    // Check for 404 error explicitly
+    if (response.status === 404) {
+      // Handle not found specifically
+      alert("Sorry, the requested resource was not found (404).");
+      window.location.href = "index.html";
+      return; // Exit the function early
+    }
     if (response.ok) {
       const data = await response.json();
       const results = data.results;
